@@ -1,0 +1,23 @@
+#:kivy 2.0.0
+
+<ThesaurusScreen>:
+    GridLayout:
+        cols:1
+        Label:
+            text: 'Word or phrase:'
+        TextInput:
+            id: phrase
+            hint_text: 'Entera word or phrase'
+        Button:
+            text: 'Show description'
+            on_press: root.get_description(root.ids.phrase.text)
+        ScrollView:
+            Label:
+                id: description
+                text: ''
+
+
+
+<RootWidget>:
+    ThesaurusScreen:
+        name: 'thesaurus_screen'

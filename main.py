@@ -16,6 +16,16 @@ class ThesaurusScreen(Screen):
         dict = json.load(io.open('data.json', encoding='utf-8'))
         phrase = phrase.lower()
 
+        if phrase in dict:
+            description = ''
+            for d in dict[phrase]:
+                description += d + '\n'
+            self.ids.description.text = description
+        else:
+            self.ids.description.text = 'Nemaaa'
+
+
+
 
 
 class RootWidget(ScreenManager):

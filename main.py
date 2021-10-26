@@ -1,10 +1,5 @@
-from kivy.core import text
 from kivy.lang import Builder
-from kivy.uix.behaviors import button
-from kivy.uix.button import Button, ButtonBehavior
 from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.uix.popup import Popup
 from kivy.app import App
@@ -12,8 +7,6 @@ from kivy.app import App
 from difflib import get_close_matches
 
 import json, io, sys
-
-from kivy.uix.widget import Widget
 
 sys.stdin.reconfigure(encoding='utf-8')
 sys.stdout.reconfigure(encoding='utf-8')

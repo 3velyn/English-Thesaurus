@@ -3,14 +3,20 @@
 <ThesaurusScreen>:
     GridLayout:
         cols:1
+        padding: 30, 30
+        spacing: 30, 30
         Label:
-            text: 'Word or phrase:'
+            text: 'Therasaurus'
+            font_size: '40sp'
         TextInput:
             id: phrase
-            hint_text: 'Entera word or phrase'
+            hint_text: 'Enter a word or phrase here'
+            font_size: '20sp'
         Button:
             text: 'Show description'
             on_press: root.get_description(root.ids.phrase.text)
+            size_hint: 0.3, 0.5
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
         ScrollView:
             Label:
                 id: description
@@ -18,8 +24,27 @@
                 text_size: self.width, None
                 height: self.texture_size[1]
 
+<Popups>:
+
+    Label:
+        id: popup_label
+        text: ''
+        size_hint: 0.6, 0.2
+        pos_hint: {'x': 0.2, 'top': 1}
+
+    Button:
+        id: yes_btn
+        text: 'Yes'
+        size_hint: 0.5, 0.4
+        pos_hint: {'x': 0, 'y': 0.1}
+    Button:
+        id: close_btn
+        text: 'No, Close'
+        size_hint: 0.5, 0.4
+        pos_hint: {'x': 0.5, 'y': 0.1}
 
 
 <RootWidget>:
     ThesaurusScreen:
         name: 'thesaurus_screen'
+
